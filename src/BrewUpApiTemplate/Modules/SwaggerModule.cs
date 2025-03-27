@@ -25,5 +25,18 @@ public sealed class SwaggerModule : IModule
 		return builder.Services;
 	}
 
-	public WebApplication Configure(WebApplication endpoints) => endpoints;
+	public WebApplication Configure(WebApplication app)
+	{
+		app.UseSwagger(s =>
+		{
+			s.RouteTemplate = "documentation/{documentName}/documentation.json";
+		});
+		app.UseSwaggerUI(s =>
+		{
+			s.SwaggerEndpoint("/documentation/v1/documentation.json", "BrewUp");
+			s.RoutePrefix = "documentation";
+		});
+
+		return app;
+	}
 }

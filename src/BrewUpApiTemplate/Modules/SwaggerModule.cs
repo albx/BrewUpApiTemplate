@@ -27,14 +27,10 @@ public sealed class SwaggerModule : IModule
 
 	public WebApplication Configure(WebApplication app)
 	{
-		app.UseSwagger(s =>
-		{
-			s.RouteTemplate = "documentation/{documentName}/documentation.json";
-		});
 		app.UseSwaggerUI(s =>
 		{
-			s.SwaggerEndpoint("/documentation/v1/documentation.json", "BrewUp");
-			s.RoutePrefix = "documentation";
+			s.SwaggerEndpoint("/openapi/documentation/v1.json", "BrewUp");
+			s.RoutePrefix = "scalar/v1";
 		});
 
 		return app;

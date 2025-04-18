@@ -30,7 +30,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/documentation",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/scalar",
       "publishAllPorts": true,
       "useSSL": true
     }

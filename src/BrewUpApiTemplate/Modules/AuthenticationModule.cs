@@ -45,5 +45,11 @@ public class AuthenticationModule : IModule
     return builder.Services;
   }
 
-  WebApplication IModule.Configure(WebApplication app) => app;
+  WebApplication IModule.Configure(WebApplication app)
+  {
+    app.UseAuthentication();
+    app.UseAuthorization();
+
+    return app;
+  }
 }

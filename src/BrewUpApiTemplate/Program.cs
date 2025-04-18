@@ -13,11 +13,6 @@ builder.RegisterModules();
 
 var app = builder.Build();
 
-app.UseCors("CorsPolicy");
-
-app.UseAuthentication();
-app.UseAuthorization();
-
 app.ConfigureModules();
 
 await app.RunAsync();
